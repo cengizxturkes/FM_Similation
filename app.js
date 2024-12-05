@@ -18,7 +18,9 @@ app.use(express.json());
 
 // Routers
 const teamRoutes = require("./routers/teamRoutes");
+const matchRoutes = require("./routers/matchRoutes");
 app.use("/api", teamRoutes);
+app.use("/api", matchRoutes);
 
 // Server
 const PORT = 5001;
