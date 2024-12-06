@@ -6,7 +6,7 @@ const app = express();
 
 // MongoDB Bağlantısı
 mongoose
-  .connect("mongodb://localhost:27017/ea_sports", {
+  .connect("mongodb://localhost:27017/TRMenajer", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -19,6 +19,9 @@ app.use(express.json());
 // Routers
 const teamRoutes = require("./routers/teamRoutes");
 const matchRoutes = require("./routers/matchRoutes");
+const leagueRoutes = require("./routers/leagueRoutes");
+
+app.use("/api", leagueRoutes);
 app.use("/api", teamRoutes);
 app.use("/api", matchRoutes);
 
